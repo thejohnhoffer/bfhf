@@ -34,7 +34,7 @@ def main():
     fnames = [f for f in all_dir if f not in EXCLUDED]
 
     footer = os.path.join(root, 'footer.html')
-    with open(footer,'w+') as footml:
+    with open(footer,'r+') as footml:
         footer = footml.read()
         if not footer: os.unlink(footml.name)
 
