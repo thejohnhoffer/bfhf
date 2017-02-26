@@ -33,10 +33,11 @@ def main():
     all_dir = sorted(os.listdir(root))
     fnames = [f for f in all_dir if f not in EXCLUDED]
 
-    footer = os.path.join(root, 'footer.html')
-    with open(footer,'r+') as footml:
-        footer = footml.read()
-        if not footer: os.unlink(footml.name)
+    footer = ''
+    footpath = os.path.join(root, 'footer.html')
+    if os.path.exists(footpath):
+        with open(footpath,'r') as footml:
+            footer = footml.read()
 
     form = Template(INDEX_TEMPLATE)
     details = {
