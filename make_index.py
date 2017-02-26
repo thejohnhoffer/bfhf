@@ -36,12 +36,12 @@ def main():
     footer = os.path.join(root, 'footer.html')
     with open(footer,'w+') as footml:
         footer = footml.read()
+        if not footer: os.unlink(footml.name)
 
-    title = os.path.basename(root)
     form = Template(INDEX_TEMPLATE)
     details = {
+        'title': root,
         'names': fnames,
-        'title': title,
         'footer': footer
     }
 
