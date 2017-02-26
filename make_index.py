@@ -27,23 +27,28 @@ from mako.template import Template
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("directory")
-    parser.add_argument("--footer")
     args = parser.parse_args()
-    footer = ''
-    if args.footer:
-        with open(parser.footer,'r') as footml:
-            footer = footml.read()
-    all_dir = sorted(os.listdir(args.directory))
-    fnames = [f for f in all_dir if f not in EXCLUDED]
-    title = os.path.basename(args.directory)
+    root = args.directory
 
+    all_dir = sorted(os.listdir(root))
+    fnames = [f for f in all_dir if f not in EXCLUDED]
+
+    footer = os.path.join(root, 'footer.html')
+    with open(footer,'w+') as footml:
+        footer = footml.read()
+
+    title = os.path.basename(root)
     form = Template(INDEX_TEMPLATE)
     details = {
         'names': fnames,
         'title': title,
         'footer': footer
     }
-    print(form.render(**details))
+
+    output = os.path.join(root, 'index.html')
+    with open(output,'w') as outml:
+        final = form.render(**details)
+        outml.write(final)
 
 
 if __name__ == '__main__':
