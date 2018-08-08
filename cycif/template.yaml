@@ -1,0 +1,129 @@
+Exhibit:
+  Channels: []
+  Images:
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/26531PRE
+      Width: 13888
+      Height: 15936
+      MaxLevel: 4
+      Name: i0
+      Description: '# 36844, pre-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/26531POST
+      Width: 31616
+      Height: 22272
+      MaxLevel: 5
+      Name: i1
+      Description: '# 26531, post-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/27960PRE
+      Width: 21504
+      Height: 22272
+      MaxLevel: 5
+      Name: i2
+      Description: '# 27960, pre-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/27960POST
+      Width: 25344
+      Height: 18048
+      MaxLevel: 5
+      Name: i3
+      Description: '# 27960, post-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/36844PRE
+      Width: 46848
+      Height: 25600
+      MaxLevel: 6
+      Name: i4
+      Description: '# 36844, pre-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/36844POST
+      Width: 40448
+      Height: 24576
+      MaxLevel: 6
+      Name: i5
+      Description: '# 36844, post-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/37648PRE
+      Width: 35328
+      Height: 16128
+      MaxLevel: 6
+      Name: i6
+      Description: '# 37648, pre-treatment'
+    - Path: >-
+        https://s3.amazonaws.com/pca2018/37648POST
+      Width: 39168
+      Height: 26624
+      MaxLevel: 6
+      Name: i7
+      Description: '# 37648, post-treatment'
+  Layout:
+    Grid:
+      - [i0, i1]
+      - [i2, i3]
+      - [i4, i5]
+      - [i6, i7]
+  Groups:
+    - Path: S100-CD45RO-SMA
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - S100
+        - CD45
+        - SMA
+        - DNA
+      Name: Tumor Architecture
+    - Path: CD8-FOXP3-CD3
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - CD8
+        - FOXP3
+        - CD3
+        - DNA
+      Name: T-Cells
+    - Path: PD1-CD3-PDL1
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - PD-1
+        - CD3
+        - PD-L1
+        - DNA
+      Name: PD-1/PD-L1
+    - Path: pS6-pRB-HES1
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pS6
+        - pRB
+        - HES1
+        - DNA
+      Name: Signaling
+  Stories:
+    - Name: Story
+      Waypoints:
+        - Name: Waypoint
+          Group: Tumor Architecture
+          Description: ''
+          Overlay:
+            x: -100
+            y: -100
+            width: 200
+            height: 200
+          Pan:
+            - 0.3861
+            - 0.4802
+          Zoom: 0.5422
